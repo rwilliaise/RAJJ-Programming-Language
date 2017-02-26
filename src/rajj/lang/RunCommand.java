@@ -7,7 +7,11 @@ public class RunCommand implements IRajScript {
 		if (args.length == 0) {
 			throw new IllegalArgumentException();
 		}
-		RAJJ.process(args[0]);
+		if (!RAJJ.global.containsKey(args[0])) {
+			RAJJ.process(args[0]);
+		} else {
+			RAJJ.process(RAJJ.global.get(args[0]).toString());
+		}
 	}
 
 	@Override
