@@ -13,9 +13,11 @@ Example:
 
 	# Empty spaces work!!!!!
 
+	setvalue g to /rajj/testing/test2.txt
+	
 	print a
 	
-	run /rajj/testing/test2.txt
+	run g
 	
 	setvalue s to 10
 
