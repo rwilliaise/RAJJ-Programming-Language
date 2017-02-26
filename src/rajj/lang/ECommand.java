@@ -12,11 +12,12 @@ public class ECommand implements IRajScript {
 		StringSelection stringSelection = new StringSelection(myString);
 		Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
 		clpbrd.setContents(stringSelection, null);
+		// stringSelection
 	}
 
 	@Override
 	public String getName() {
-		return "e";
+		return "emptyClipboard";
 	}
 
 }

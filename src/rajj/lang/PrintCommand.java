@@ -7,11 +7,15 @@ public class PrintCommand implements IRajScript {
 		if (args.length == 0) {
 			throw new IllegalArgumentException();
 		}
-		String out = "";
-		for (String arg : args) {
-			out += arg + " ";
+		if (!RAJJ.global.containsKey(args[0])) {
+			String out = "";
+			for (String arg : args) {
+				out += arg + " ";
+			}
+			System.out.println(out);
+		} else {
+			System.out.println(RAJJ.global.get(args[0]));
 		}
-		System.out.println(out);
 	}
 
 	@Override
