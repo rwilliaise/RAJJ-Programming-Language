@@ -7,7 +7,9 @@ public class SetValueCommand implements IRajScript {
 		if (args.length <= 1) {
 			throw new IllegalArgumentException();
 		}
-		RAJJ.global.put(args[0], args[1]);
+		if (!args[1].equals("to"))
+			throw new IllegalArgumentException();
+		RAJJ.global.put(args[0], args[2]);
 	}
 
 	@Override
