@@ -1,9 +1,9 @@
 package rajj.lang;
 
-public class PrintCommand implements IRajScript {
+public class PrintCommand implements IRajjCommand {
 
 	@Override
-	public void execute(String[] args) {
+	public void execute(String[] args, int line) {
 		if (args.length == 0) {
 			throw new IllegalArgumentException();
 		}

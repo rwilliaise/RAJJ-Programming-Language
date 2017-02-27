@@ -1,0 +1,7 @@
+setvalue s to 1
+
+setvalue oldValueS to 1
+
+setvalue add s oldValueS s
+
+print s

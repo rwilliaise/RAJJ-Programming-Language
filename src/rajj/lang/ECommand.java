@@ -4,10 +4,10 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
-public class ECommand implements IRajScript {
+public class ECommand implements IRajjCommand {
 
 	@Override
-	public void execute(String[] args) {
+	public void execute(String[] args, int line) {
 		String myString = "";
 		StringSelection stringSelection = new StringSelection(myString);
 		Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();

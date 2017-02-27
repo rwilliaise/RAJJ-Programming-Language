@@ -1,3 +1,5 @@
+# test.txt
+
 ########
 #
 # Cool! Comments!
@@ -6,4 +8,10 @@
 
 # Empty spaces work!!!!!
 
+setvalue bbbbb to /rajj/testing/test2.txt
+
 print a
+
+run bbbbb
+
+setvalue s to 10
