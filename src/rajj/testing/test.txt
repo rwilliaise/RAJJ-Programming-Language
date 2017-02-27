@@ -1,17 +1,6 @@
-# test.txt
+setvalue g to true
 
-########
-#
-# Cool! Comments!
-#
-########
-
-# Empty spaces work!!!!!
-
-setvalue bbbbb to /rajj/testing/test2.txt
-
-print a
-
-run bbbbb
-
-setvalue s to 10
+while g do
+print 1
+setvalue g to false
+}

@@ -1,9 +1,9 @@
 package rajj.lang;
 
-public class RunCommand implements IRajjCommand {
+public class RunCommand extends IRajjCommand {
 
 	@Override
-	public void execute(String[] args, int line) {
+	public void execute(String[] args) {
 		if (args.length == 0) {
 			throw new IllegalArgumentException();
 		}

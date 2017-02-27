@@ -1,9 +1,9 @@
 package rajj.lang;
 
-public class SetValueCommand implements IRajjCommand {
+public class SetValueCommand extends IRajjCommand {
 
 	@Override
-	public void execute(String[] args, int line) {
+	public void execute(String[] args) {
 		if (args.length <= 1) {
 			throw new IllegalArgumentException();
 		}

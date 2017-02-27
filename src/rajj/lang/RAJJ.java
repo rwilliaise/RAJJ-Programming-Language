@@ -12,6 +12,7 @@ public class RAJJ {
 	public static Hashtable<String, IBaseMod> mods = new Hashtable<>();
 	public static Hashtable<String, Object> global = new Hashtable<>();
 	public static List<IRajjCommand> program = new ArrayList<>();
+	public static List<String[]> args = new ArrayList<>();
 	public static boolean inIDE = true;
 
 	private static boolean done = false;
@@ -34,12 +35,14 @@ public class RAJJ {
 		global.put("maxuint32", Math.pow(2, 32) - 1);
 		global.put("minuint32", -(Math.pow(2, 32) - 1));
 		registerCommand(new RunCommand());
-		registerCommand(new ECommand());
+		registerCommand(new ClipboardCommand());
 		registerCommand(new PrintCommand());
 		registerCommand(new SetValueCommand());
+		registerCommand(new WhileCommand());
+		registerCommand(new BracketCommand());
 		done = true;
 		if (inIDE) {
-			process("/rajj/testing/test.txt");
+			process(args[0]);
 			inIDE = false;
 		}
 	}
@@ -50,8 +53,10 @@ public class RAJJ {
 		}
 		IRajjCommand script = s.get(string[0]);
 		if (script != null) {
-			script.execute(Arrays.copyOfRange(string, 1, string.length), line);
 			program.add(script);
+			args.add(Arrays.copyOfRange(string, 1, string.length));
+			// System.out.println(program.size());
+			// System.out.println(RAJJ.args.size());
 		} else {
 			if (string[0].equals(""))
 				return;
@@ -82,10 +87,22 @@ public class RAJJ {
 			line++;
 			raj(i.split(" "), line);
 		}
-
+		for (IRajjCommand script : program) {
+			script.execute(args.get(get(program, script)));
+			script.line = get(program, script);
+		}
 	}
 
 	// public static InputStream grabInput(String in) {
 	// return RAJJ.class.getResourceAsStream(in);
 	// }
+
+	private static <K> int get(List<K> list, K object) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).equals(object)) {
+				return i;
+			}
+		}
+		return -1;
+	}
 }

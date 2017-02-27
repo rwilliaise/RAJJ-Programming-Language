@@ -1,8 +1,10 @@
 package rajj.lang;
 
-public interface IRajjCommand {
+public abstract class IRajjCommand {
 
-	public void execute(String[] args, int line);
+	public int line;
 
-	public String getName();
+	public abstract void execute(String[] args);
+
+	public abstract String getName();
 }
