@@ -13,6 +13,7 @@ public class RAJJ {
 	public static Hashtable<String, Object> global = new Hashtable<>();
 	public static List<IRajjCommand> program = new ArrayList<>();
 	public static List<String[]> args = new ArrayList<>();
+	public static String currentOpenFile;
 	public static boolean inIDE = true;
 
 	private static boolean done = false;
@@ -40,6 +41,7 @@ public class RAJJ {
 		registerCommand(new SetValueCommand());
 		registerCommand(new WhileCommand());
 		registerCommand(new BracketCommand());
+		registerCommand(new DollarCommand());
 		done = true;
 		if (inIDE) {
 			process(args[0]);
@@ -81,6 +83,7 @@ public class RAJJ {
 			return;
 		}
 		Scanner scanner = new Scanner(RAJJ.class.getResourceAsStream(in));
+		currentOpenFile = in;
 		int line = 0;
 		while (scanner.hasNextLine()) {
 			String i = scanner.nextLine();

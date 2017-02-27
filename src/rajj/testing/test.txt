@@ -1,6 +1,3 @@
-setvalue g to abcdefg
+# $ ssfsfs
 
-while true
-	print g
-	print ggg
-}
+print 1
