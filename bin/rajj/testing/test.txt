@@ -1,6 +1,6 @@
-setvalue g to true
+setvalue g to abcdefg
 
-while g do
-print 1
-setvalue g to false
+while true
+	print g
+	print ggg
 }

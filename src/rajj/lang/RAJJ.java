@@ -85,11 +85,15 @@ public class RAJJ {
 		while (scanner.hasNextLine()) {
 			String i = scanner.nextLine();
 			line++;
-			raj(i.split(" "), line);
+			String[] s = i.split(" ");
+			for (int v = 0; v < i.split(" ").length; v++) {
+				s[v] = s[v].replaceAll("\\t", "");
+			}
+			raj(s, line);
 		}
 		for (IRajjCommand script : program) {
-			script.execute(args.get(get(program, script)));
 			script.line = get(program, script);
+			script.execute(args.get(get(program, script)));
 		}
 	}
 
