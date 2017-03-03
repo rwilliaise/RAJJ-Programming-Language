@@ -78,6 +78,7 @@ public class RAJJ {
 		mods.put(mod.getName(), mod);
 	}
 
+	@SuppressWarnings("resource")
 	public static void process(String in) {
 		if (!done) {
 			return;

@@ -1,3 +1,11 @@
 # $ ssfsfs
 
-print 1
+setvalue oldS to 0
+
+setvalue s to 1
+
+while true
+	setvalue oldS to s
+	setvalue add s oldS 2
+	print s
+}
